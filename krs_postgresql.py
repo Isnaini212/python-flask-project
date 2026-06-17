@@ -32,7 +32,7 @@ def buat_tabel():
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS mahasiswa (
-            nim INT PRIMARY KEY,
+            nim VARCHAR(15) PRIMARY KEY,
             nama VARCHAR(100) NOT NULL,
             jurusan VARCHAR(50) NOT NULL,
             fakultas VARCHAR(50) NOT NULL
@@ -41,9 +41,9 @@ def buat_tabel():
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS matakuliah (
-            kodemk VARCHAR(4) PRIMARY KEY,
+            kodemk VARCHAR(15) PRIMARY KEY,
             namamk VARCHAR(100) NOT NULL,
-            sks INT NOT NULL,
+            sks VARCHAR(50) NOT NULL,
             biaya DECIMAL(12,2) DEFAULT 0
         )
     """)
@@ -52,8 +52,8 @@ def buat_tabel():
         CREATE TABLE IF NOT EXISTS krs (
             thn_ajar INT NOT NULL,
             semester VARCHAR(4) NOT NULL,
-            nim INT NOT NULL,
-            kodemk VARCHAR(4) NOT NULL,
+            nim VARCHAR(15) NULL,
+            kodemk VARCHAR(15) NOT NULL,
             PRIMARY KEY (thn_ajar, semester, nim, kodemk)
         )
     """)

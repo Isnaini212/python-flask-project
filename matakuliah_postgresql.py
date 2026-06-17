@@ -32,7 +32,7 @@ def buat_tabel():
             kodemk VARCHAR(15) PRIMARY KEY,
             namamk VARCHAR(100) NOT NULL,
             sks VARCHAR(50) NOT NULL,
-            biaya VARCHAR(50) NOT NULL
+            biaya DECIMAL(12,2) DEFAULT 0
         )
     """)
 
@@ -353,8 +353,8 @@ if __name__ == "__main__":
     try:
         buat_tabel()
         print("Aplikasi berhasil dijalankan.")
-        print("Buka browser: http://127.0.0.1:5000")
-        app.run(debug=True, port=5000)
+        print("Buka browser: http://127.0.0.1:5001")
+        app.run(debug=True, port=5001)
     except Exception as error:
         print("Aplikasi gagal dijalankan.")
         print("Penyebab error:", error)
